@@ -46,8 +46,8 @@ RSpec.describe Api::BenchesController, type: :controller do
   describe 'GET #index' do
     render_views
 
-    let!(:bench1) { create(:bench) }
-    let!(:bench2) { create(:bench, lat: 26, lng: 26) }
+    let!(:bench_1) { create(:bench)}
+    let!(:bench_2) { create(:bench, lat: 50, lng: 250) }
     context 'when there are no bounds or seating ranges' do
       before(:each) do
         get :index, { format: :json }
