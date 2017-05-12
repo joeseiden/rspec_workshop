@@ -19,15 +19,15 @@ RSpec.describe User, type: :model do
     describe '.find_by_credentials' do
       context 'when given correct credentials' do
         it 'should find the right user' do
-          user = User.find_by_credentials("magnus_burnsides", "password")
-          expect(user.username).to eq("magnus_burnsides")
+          found_user = User.find_by_credentials("magnus_burnsides", "password")
+          expect(found_user.username).to eq(user.username)
         end
       end
 
       context 'when given incorrect credentials' do
         it 'should return nil' do
-          user = User.find_by_credentials("barry_bluejeans", "wrong_pw")
-          expect(user).to be_nil
+          found_user = User.find_by_credentials("barry_bluejeans", "wrong_pw")
+          expect(found_user).to be_nil
         end
       end
     end
